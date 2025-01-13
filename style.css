@@ -1,0 +1,215 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background and text color */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Fade-in animation for sections */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* New Big "Web Development" Title with colors and animation */
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+h1 span:first-child {
+  color: lightgreen;
+  text-shadow: 0 0 15px lightgreen, 0 0 30px #fff;
+}
+
+h1 span:last-child {
+  color: white;
+  text-shadow: 0 0 10px white, 0 0 20px white;
+  font-size: 3rem;
+  display: block;
+  margin-top: 20px;
+}
+
+/* Image resizing */
+img {
+  max-width: 200px; /* Set maximum width for the image */
+  max-height: 200px; /* Set maximum height for the image */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow around the image */
+}
+
+/* Styling for the laptop icon next to "Development" */
+h1 .computer-icon {
+  font-size: 6rem; /* Adjust the size to make it large */
+  margin-left: 15px;
+  vertical-align: middle;
+  color: #f9d423; /* Change the icon color to make it stand out */
+}
+
+/* Rewrite effect for "Development" and below texts */
+@keyframes rewriteText {
+  0% { content: "Web Development"; }
+  25% { content: "This is my learning journey!"; }
+  50% { content: "Exploring HTML, CSS, and JavaScript..."; }
+  75% { content: "The path to becoming a full-stack developer!"; }
+  100% { content: "Let's code and grow together!"; }
+}
+
+h2::after {
+  content: "Web Development";
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: rewriteText 10s infinite alternate;
+}
+
+/* Slide-in and color animation for name */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Color changing animation (using a mix of colors) */
+@keyframes colorChange {
+  0% {
+    color: #ff4e50; /* Red */
+  }
+  20% {
+    color: #ffdd00; /* Yellow */
+  }
+  40% {
+    color: #00bfff; /* Blue */
+  }
+  60% {
+    color: #00ff00; /* Green */
+  }
+  80% {
+    color: #ff6347; /* Orange */
+  }
+  100% {
+    color: #ff4e50; /* Red */
+  }
+}
+
+/* Flicker text effect */
+.flicker {
+  animation: flickerEffect 0.8s infinite;
+}
+
+@keyframes flickerEffect {
+  0% { opacity: 1; }
+  25% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+  75% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* Background particles animation */
+@keyframes particle {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://cdn.pixabay.com/photo/2017/10/29/07/56/abstract-2909026_960_720.jpg') repeat;
+  animation: particle 4s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* Styling for section and text */
+section {
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* New footer-like colored lines for intro text */
+footer {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+footer .line {
+  width: 100%;
+  height: 4px;
+  margin-top: 10px;
+}
+
+footer .line1 {
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+}
+
+footer .line2 {
+  background: linear-gradient(90deg, #00bfff, #00ff00);
+}
+
+/* Cursive font effect for Nitish Sharma */
+.name-highlight {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  text-transform: capitalize;
+  animation: slideIn 2s ease-out;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MG Overseas - Work Abroad Safely & Securely</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            color: #f59e0b;
+            margin-right: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f59e0b;
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(239,68,68,0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(239,68,68,0.4);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(37,99,235,0.95), rgba(29,78,216,0.95)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,186.7C672,181,768,171,864,154.7C960,139,1056,117,1152,122.7C1248,128,1344,160,1392,176L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Countries Grid */
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .country-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid #2563eb;
+        }
+
+        .country-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .country-flag {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .country-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 5px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-card.visa { border-top-color: #2563eb; }
+        .service-card.employment { border-top-color: #10b981; }
+        .service-card.logistics { border-top-color: #f59e0b; }
+        .service-card.financial { border-top-color: #ef4444; }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Financial Policy */
+        .financial-section {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .financial-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .policy-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .policy-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .policy-icon {
+            font-size: 1.5rem;
+            color: #10b981;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.4rem;
+            color: #2563eb;
+            width: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+        }
+
+        /* SUCCESS POPUP */
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #10b981, #059669);
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            text-align: center;
+            color: white;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 25px 80px rgba(16,185,129,0.4);
+            animation: popupSlideIn 0.4s ease;
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .popup-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .popup-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .close-popup {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-popup:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background: #1f2937;
+            color: #9ca3af;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-globe-americas"></i>
+                MG Overseas
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#countries">Countries</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#financial">Guarantee</a></li>
+                <li><a href="#contact">Apply</a></li>
+            </ul>
+            <a href="#contact" class="cta-btn">Apply Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Work Abroad Securely</h1>
+            <p>Complete visa, job placement, accommodation & NO advance payment. Join 10,000+ successful workers.</p>
+            <a href="#contact" class="cta-btn">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Countries -->
+    <section class="section" id="countries">
+        <h2 class="section-title">Available Countries</h2>
+        <p class="section-subtitle">High-demand jobs with guaranteed placement</p>
+        <div class="countries-grid">
+            <div class="country-card">
+                <div class="country-flag">🇲🇺</div>
+                <h3>Mauritius</h3>
+                <p>Hospitality • Construction</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇧🇸</div>
+                <h3>Bahamas</h3>
+                <p>Tourism • Healthcare</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇵🇱</div>
+                <h3>Poland</h3>
+                <p>Manufacturing • IT</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇰🇷</div>
+                <h3>South Korea</h3>
+                <p>Electronics • Engineering</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇨🇦</div>
+                <h3>Canada</h3>
+                <p>Healthcare • Technology</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇦🇺</div>
+                <h3>Australia</h3>
+                <p>Construction • Mining</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇬🇧</div>
+                <h3>UK</h3>
+                <p>Caregiving • Nursing</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇩🇪</div>
+                <h3>Germany</h3>
+                <p>Engineering • Automotive</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+        <h2 class="section-title">Our 4-Step Service</h2>
+        <p class="section-subtitle">Complete support from application to first paycheck</p>
+        <div class="services-grid">
+            <div class="service-card visa">
+                <i class="fas fa-passport service-icon"></i>
+                <h3>Visa Assistance</h3>
+                <p>Complete documentation & processing for legal entry. 98% success rate.</p>
+            </div>
+            <div class="service-card employment">
+                <i class="fas fa-briefcase service-icon"></i>
+                <h3>Job Placement</h3>
+                <p>Guaranteed interviews with verified employers. Multiple job offers.</p>
+            </div>
+            <div class="service-card logistics">
+                <i class="fas fa-home service-icon"></i>
+                <h3>Housing & Meals</h3>
+                <p>Fully furnished accommodation + 3 meals daily for 30 days. Airport pickup.</p>
+            </div>
+            <div class="service-card financial">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h3>No Advance Payment</h3>
+                <p>Only security deposit after job confirmation. 100% refundable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Policy -->
+    <section class="section financial-section" id="financial">
+        <h2 class="section-title" style="color: white;">Zero Risk Guarantee</h2>
+        <div class="financial-box">
+            <h3 style="font-size: 1.8rem; margin-bottom: 2rem;">
+                <i class="fas fa-lock" style="color: #10b981; margin-right: 1rem;"></i>
+                Our Payment Promise
+            </h3>
+            <div class="policy-list">
+                <div class="policy-item">
+                    <i class="fas fa-times-circle policy-icon"></i>
+                    <strong>No upfront fees</strong> ever
+                </div>
+                <div class="policy-item">
+                    <i class="fas fa-check-circle policy-icon"></i>
+                    Security deposit <strong>only after job offer</strong>
+                </div>
+                <div class="policy-item">
+                    <i class="fas fa-undo policy-icon"></i>
+                    <strong>100% refundable</strong> deposit
+                </div>
+                <div class="policy-item">
+                    <i class="fas fa-money-bill-wave policy-icon"></i>
+                    <strong>Weekly salary</strong> guarantee
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Apply Now - Free Consultation</h2>
+        <p class="section-subtitle">Fill the form and get personalized job matching within 24 hours</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>📧 Direct Contact</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>nitishsharma24690@gmail.com</strong><br>
+                        <small>Applications received instantly</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>+1 (555) 123-4567</div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>Response within 24 hours</div>
+                </div>
+            </div>
+            <form id="applicationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="fullName" placeholder="Full Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Phone Number *" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="currentCountry" placeholder="Current Country *" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <select id="destinationCountry" required>
+                        <option value="">Select Destination Country *</option>
+                        <option value="Mauritius">🇲🇺 Mauritius</option>
+                        <option value="Bahamas">🇧🇸 Bahamas</option>
+                        <option value="Poland">🇵🇱 Poland</option>
+                        <option value="South Korea">🇰🇷 South Korea</option>
+                        <option value="Canada">🇨🇦 Canada</option>
+                        <option value="Australia">🇦🇺 Australia</option>
+                        <option value="UK">🇬🇧 UK</option>
+                        <option value="Germany">🇩🇪 Germany</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="jobType" placeholder="Job Preference (ex: Driver, Nurse, Welder) *" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="experience" rows="3" placeholder="Work Experience (2-3 sentences)"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Application
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MG Overseas. All rights reserved. | 
+            <a href="mailto:nitishsharma24690@gmail.com">nitishsharma24690@gmail.com</a>
+        </p>
+    </footer>
+
+    <!-- SUCCESS POPUP -->
+    <div class="success-popup" id="successPopup">
+        <div class="popup-content">
+            <i class="fas fa-check-circle success-icon"></i>
+            <div class="popup-title">✅ Application Submitted Successfully!</div>
+            <div class="popup-text">
+                Your details have been sent to <strong>nitishsharma24690@gmail.com</strong><br>
+                Our team will contact you within 24 hours with your personalized plan.
+            </div>
+            <button class="close-popup" onclick="closePopup()">Got it! Thank you</button>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FORM SUBMISSION + SUCCESS POPUP + EMAIL
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                currentCountry: document.getElementById('currentCountry').value,
+                destinationCountry: document.getElementById('destinationCountry').value,
+                jobType: document.getElementById('jobType').value,
+                experience: document.getElementById('experience').value || 'Not provided',
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Create perfectly formatted email
+            const subject = `🆕 NEW APPLICATION: ${formData.fullName} - ${formData.destinationCountry}`;
+            const body = `
+🎯 MG OVERSEAS - NEW APPLICATION
+
+👤 Name: ${formData.fullName}
+📱 Phone: ${formData.phone}
+✉️ Email: ${formData.email}
+🌍 Current Country: ${formData.currentCountry}
+🎯 Destination: ${formData.destinationCountry}
+💼 Job Preference: ${formData.jobType}
+📋 Experience: ${formData.experience}
+
+⏰ Submitted: ${formData.timestamp}
+
+---
+MG Overseas Application Portal
+nitishsharma24690@gmail.com
+            `.trim();
+
+            // Create mailto link & open email
+            const mailtoLink = `mailto:nitishsharma24690@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // SHOW SUCCESS POPUP
+            document.getElementById('successPopup').style.display = 'block';
+            
+            // Open email client (user's default email app)
+            window.open(mailtoLink, '_blank');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Close popup function
+        function closePopup() {
+            document.getElementById('successPopup').style.display = 'none';
+        }
+
+        // Close popup on outside click
+        document.getElementById('successPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(37, 99, 235, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
+            }
+        });
+    </script>
+</body>
+</html>
